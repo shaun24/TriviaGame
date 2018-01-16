@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <span id="questionGenorator"></span>
+        <br>
+        <button><span class="answerChoices" id="answerChoices1"></span></button>
+        <br>
+        <button><span class="answerChoices" id="answerChoices2"></span></button>
+        <br>
+        <button><span class="answerChoices" id="answerChoices3"></span></button>
+    </div>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+    /*Questions object*/
+// var questions= {
+//     q1: ["Whose house was burned to the ground?", "Jeremy Clarkson"],
+//     q2: ["Who tried to make a car out of mud?", "James May"],
+// }
+
+// var choices = {
+//     q1: ["James May", "Jeremy Clarkson", "Richard Hammond"],
+//     q2: ["James May", "Jeremy Clarkson", "Richard Hammond"],
+// }
+//     /*to keep track of score*/
+//     var score = 0;
+
+//     /*questions array */
+//     var questionsArray = [questions.q1, questions.q2];
+
+
+// function() {
+    var questions = [{
+      question: "Whose house was burned to the ground?",
+      choices: ["James May", "Jeremy Clarkson", "Richard Hammond"],
+      correctAnswer: "Jeremy Clarkson"
+    }, {
+      question: "Who tried to make a car out of mud?",
+      choices: ["James Maay", "Jeremy Clarksoon", "Richard Hammoond"],
+      correctAnswer: "James Maay"
+    }, {
+      question: "What is 8*9?",
+      choices: [72, 99, 108, 134, 156],
+      correctAnswer: 0
+    }, {
+      question: "What is 1*7?",
+      choices: [4, 5, 6, 7, 8],
+      correctAnswer: 3
+    }, {
+      question: "What is 8*8?",
+      choices: [20, 30, 40, 50, 64],
+      correctAnswer: 4
+    }]
+    
+    var questionsArray = [questions[0].question, questions[1].question, questions[2].question,
+                          questions[3].question, questions[4].question];
+    var choicesArray =   [questions[0].choices, questions[1].choices, questions[2].choices,
+                          questions[3].choices, questions[4].choices];
+    var answersArray =   [questions[0].correctAnswer, questions[1].correctAnswer, questions[2].correctAnswer,
+                          questions[3].correctAnswer, questions[4].correctAnswer];
+    var questionCounter = 0;
+    var selections = [];
+
+    
+    
+    
+    
+    function questionRender() {
+        // if (questionCounter <= (questionsArray.length -1, questionCounter++)) {
+            document.querySelector("#questionGenorator").innerHTML =
+            questionsArray[0];
+            document.querySelector("#answerChoices1").innerHTML = 
+            choicesArray [0][0];
+            document.querySelector("#answerChoices2").innerHTML =
+            answersArray[0];
+            document.querySelector("#answerChoices3").innerHTML =
+            choicesArray [0][2];
+
+        // } else {
+            // document.querySelector("#questionGenorator").innerHTML = "finish"
+        // }
+    }
+    // }
+    // function game() {
+    //     var theChoice = document.getElementsByClassName("answerChoices")
+
+    //     theChoice.addEventListener('click', function(e){
+    //         if ('click' === answersArray) {
+    //         alert("Correct!");
+    //         document.querySelector("#questionGenorator").innerHTML =
+    //         questionsArray[1];
+    //         document.querySelector("#answerChoices1").innerHTML = 
+    //         choicesArray [1]; 
+    //     }})
+    // function game() {
+
+        // $(".answerChoices").on("click", function() {
+        //     if ( choicesArray[0][1]=== answersArray[0]) {
+        //         alert("Correct!")
+        //         document.querySelector("#questionGenorator").innerHTML =
+        //         questionsArray[1];
+        //         document.querySelector("#answerChoices1").innerHTML = 
+        //         answersArray[1];
+        //         document.querySelector("#answerChoices2").innerHTML = 
+        //         choicesArray[1][1];
+        //         document.querySelector("#answerChoices3").innerHTML =
+        //         choicesArray[1][2];
+        //     } 
+        // })
+
+        function nextQuestion() {
+            for (var i = 0; i <= questionsArray.length; i++)  {
+                $(".answerChoices").on("click", function() {
+                    document.querySelector("#questionGenorator").innerHTML =
+                    questionsArray[i]
+                })
+            }
+        }
+
+            // document.querySelector("#answerChoices2").innerHTML =
+            // correctAnswer[1]
+            
+        
+    
+
+    // answersArray.addEventListener('click', function(e) {
+    //     game()
+    // })
+
+    questionRender();
+    nextQuestion();
+    // game();
+    // $("#questionGenorator").text(questions[0].question);
+    // $("#answerChoices").text(questions[0].choices);
+            // if (questionCounter <= questionsArray - 1, questionCounter++) {
+        //     document.querySelector("#questionGenorator").innerHTML =
+        //     questionsArray[0];
+        //     console.log(questionsArray[0])
+
+</script>
+</html>
