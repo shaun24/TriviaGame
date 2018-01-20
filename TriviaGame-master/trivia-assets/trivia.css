@@ -1,0 +1,48 @@
+body {
+background: url("gtwallpaper.jpg");
+}
+
+button {
+    width: 220px;
+    background-color: #accdeac7;
+    height:45px;
+    color: #015d3f;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: serif;
+}
+
+#question {
+/* align-content: middle; */
+text-align: center;
+margin-top: 150px;
+background-color: #0000ff7d;
+/* width: 550px; */
+/* height: 75px; */
+/* padding-left: 0px; */
+/* margin-left: 400px; */
+font-family:monospace;
+color: #eaeaea;
+/* font-weight: bold; */
+font-size: 20pt;
+}
+
+.answer-choice {
+
+}
+
+.boxChoice {
+    text-align: center;
+}
+
+.ovrScore {
+    text-align:center;
+    color: white;
+    background-color:rgba(44, 146, 13, 0.651);
+}
+
+#Timer {
+    background-color: green;
+    color:white;
+    text-align: center;
+}
