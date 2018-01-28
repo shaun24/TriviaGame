@@ -6,8 +6,10 @@
    const choiceFour = document.getElementById("choice-four");
    const choiceFive = document.getElementById("choice-five");
    const scoreTracker = document.getElementById("valueTracker");
-   var showTime = document.getElementById("Timer")
-
+   var showTime = document.getElementById("Timer");
+   var imageFinish = document.getElementById("imageFinish");
+   var imageFinish2 = document.createElement("img");
+   var blue =  "trivia-assets/right_answers.jpg";
 
    var questions = [{
      question: "Whose house was burned to the ground?",
@@ -36,14 +38,8 @@
    var scoreCounter = 1;  
    var selections = [];
    var intervalOne = setInterval(decrease, 1000);
+   var timer = 15;
 
-   var stopWatch = {   
-        qOne : 30,
-        qTwo : 60,
-        qThree : 90,
-        qFour : 30,
-        qFive : 30,
-    }
 
 
    function initGame(){
@@ -55,22 +51,29 @@
 
 
    function decrease() {
-       var tOne = stopWatch.qOne--;
-       var tTwo = stopWatch.qTwo--;
-       var tThree = stopWatch.qThree--;
-       var intervalFirst = setInterval(tOne, 1000);
-       var intervalSecond = setInterval(tTwo, 1000);
+    //    var tOne = stopWatch.qOne--;
+    //    var tTwo = stopWatch.qTwo--;
+    //    var tThree = stopWatch.qThree--;
+    //    var intervalFirst = setInterval(tOne, 1000);
+    //    var intervalSecond = setInterval(tTwo, 1000);
 
-       console.log(stopWatch.qOne);
-       showTime.textContent = stopWatch.qOne;
+    //    console.log(stopWatch.qOne);
+    //    showTime.textContent = stopWatch.qOne;
 
-       if (stopWatch.qOne === 0) {
-        clearInterval(intervalFirst);
+    //    if (stopWatch.qOne === 0) {
+    //     clearInterval(intervalFirst);
+    //     initQuestion()
+    //     setInterval(tTwo, 1000);
+    //     console.log(stopWatch.qTwo);
+    //     showTime.textContent = stopWatch.qTwo;
+    //    }
+    timer--;
+    showTime.textContent = timer;
+    if ( timer === 0) {
+        alert("out of time")
         initQuestion()
-        setInterval(tTwo, 1000);
-        console.log(stopWatch.qTwo);
-        showTime.textContent = stopWatch.qTwo;
-       }
+    }
+
     };
 
     function questionTimer (timer) {
@@ -90,9 +93,10 @@
            choiceFour.textContent = currentQuestion.choices[3];
            choiceFive.textContent = currentQuestion.choices[4];    
            questionCounter++;
-
+           timer = 30;
        }else {
-           // document.write(scoreCounter);
+        //    document.write(scoreCounter);
+        //    imageFinish.appendChild(blue);
        } 
    }
 
@@ -110,6 +114,13 @@
                console.log(questionCounter);
                initQuestion();
            });
+       }
+   }
+
+   function winnerLoser () {
+       if ( scoreTracker === 5) {
+           imageFinish.appendChild(blue);
+
        }
    }
 
