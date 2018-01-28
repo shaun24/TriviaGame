@@ -95,7 +95,7 @@
            questionCounter++;
            timer = 30;
        }else {
-        //    document.write(scoreCounter);
+           document.write(scoreCounter);
         //    imageFinish.appendChild(blue);
        } 
    }
